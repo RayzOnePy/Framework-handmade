@@ -1,0 +1,22 @@
+{
+    "name": "rayzonepy/framework-handmade",
+    "description": "Simple mvc framework",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rayzone",
+            "email": "ocus288.u@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "core/Src/",
+            "": "app/"
+        }
+    }
+}
