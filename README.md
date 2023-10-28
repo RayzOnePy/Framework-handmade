@@ -1,2 +1,2 @@
-# Framework-handmade-
+# Framework-handmade
 Собственный "Фреймворк-Грушевского"
