@@ -1,6 +1,6 @@
 <?php
 return [
-    'root' => 'project',
+    'root' => '',
     'classes' => [
         'app',
         'core'
