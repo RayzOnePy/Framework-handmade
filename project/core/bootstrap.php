@@ -21,4 +21,14 @@ function getConfigs(string $path = DIR_CONFIG): array
 
 require_once __DIR__ . '/../routes/web.php';
 
-return new Application(new Settings(getConfigs()));
+$app = new Application(new Settings(getConfigs()));
+
+function app()
+{
+    global $app;
+    return $app;
+}
+
+return $app;
+
+//return new Application(new Settings(getConfigs()));

@@ -19,6 +19,6 @@ RUN install-php-extensions \
 
 COPY php.ini /usr/local/etc/php/conf.d/40-custom.ini
 
-WORKDIR /var/www
+WORKDIR /var/www/html
 
 CMD ["php-fpm"]
