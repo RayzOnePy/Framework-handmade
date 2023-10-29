@@ -21,6 +21,11 @@ class Settings
         throw new Error('Accessing a non-existent property');
     }
 
+    public function getDbSettings()
+    {
+        return $this->db ?? [];
+    }
+
     public function getRootPath(): string
     {
         return $this->path['root'] ? '/' . $this->path['root'] : '';
