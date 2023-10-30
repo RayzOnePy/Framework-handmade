@@ -15,7 +15,13 @@ class Auth
         if (self::user()) {
             self::login(self::user());
         }
+    }
 
+    public static function generateCSRF(): string
+    {
+        $token = md5(time());
+        Session::set('csrf_token', $token);
+        return $token;
     }
 
     public static function user()
@@ -24,7 +30,7 @@ class Auth
         return self::$user->findIdentity($id);
     }
 
-    public static function login(IdentityInterface $user):void
+    public static function login(IdentityInterface $user): void
     {
         self::$user = $user;
         Session::set('id', self::$user->getId());
@@ -32,14 +38,14 @@ class Auth
 
     public static function attempt(array $credentials): bool
     {
-        if ($user = self::$user->attemptIdentity($credentials)){
+        if ($user = self::$user->attemptIdentity($credentials)) {
             self::login($user);
             return true;
         }
         return false;
     }
 
-    public static function check() : bool
+    public static function check(): bool
     {
         if (self::user()) {
             return true;
@@ -47,7 +53,7 @@ class Auth
         return false;
     }
 
-    public static function logout() : bool
+    public static function logout(): bool
     {
         Session::clear('id');
         return true;
