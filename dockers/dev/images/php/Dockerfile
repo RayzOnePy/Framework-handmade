@@ -15,7 +15,8 @@ RUN curl -sSLf \
 RUN chmod +x /usr/local/bin/install-php-extensions
 RUN install-php-extensions \
     pdo \
-    pdo_pgsql
+    pdo_pgsql \
+    xdebug
 
 COPY php.ini /usr/local/etc/php/conf.d/40-custom.ini
 

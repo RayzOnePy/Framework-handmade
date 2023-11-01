@@ -1,6 +1,7 @@
 version: '3'
 services:
   nginx:
+    container_name: nginx
     image: nginx:stable-alpine
     ports:
       - ${WEB_PORTS:-80:80}
@@ -14,6 +15,7 @@ services:
       - api
 
   api:
+    container_name: api
     build: ./images/php
     volumes:
       - ../../project:/var/www/html
@@ -24,6 +26,7 @@ services:
       - postgres
 
   postgres:
+    container_name: postgres
     image: postgres:16.0-alpine
     restart: "always"
     environment:
@@ -38,6 +41,7 @@ services:
       - backend-network
 
   adminer:
+    container_name: adminer
     image: adminer:4.8.1
     environment:
       ADMINER_DEFAULT_SERVER: postgres
