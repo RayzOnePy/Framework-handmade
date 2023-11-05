@@ -23,7 +23,7 @@ abstract class AbstractValidator
         ];
     }
 
-    public function validate()
+    public function validate(): string
     {
         if (!$this->rule())
             return $this->messageError();

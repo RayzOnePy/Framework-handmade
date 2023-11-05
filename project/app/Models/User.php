@@ -25,7 +25,7 @@ class User extends Model implements IdentityInterface
         });
     }
 
-    public function findIdentity(int $id)
+    public function findIdentity(int $id): self
     {
         return self::where('id', $id)->first();
     }
@@ -35,7 +35,7 @@ class User extends Model implements IdentityInterface
         return $this->id;
     }
 
-    public function attemptIdentity(array $credentials)
+    public function attemptIdentity(array $credentials): self
     {
         return self::where(['login' => $credentials['login'], 'password' => md5($credentials['password'])])->first();
     }
