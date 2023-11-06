@@ -5,6 +5,9 @@ namespace Src\Validator;
 abstract class AbstractValidator
 {
     protected string $field = '';
+    /**
+     * @var object
+     */
     protected $value;
     protected array $args = [];
     protected array $messageKeys = [];

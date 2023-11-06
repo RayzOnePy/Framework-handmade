@@ -21,7 +21,7 @@ class Settings
         throw new Error('Accessing a non-existent property');
     }
 
-    public function getDbSettings()
+    public function getDbSettings(): array
     {
         return $this->db ?? [];
     }

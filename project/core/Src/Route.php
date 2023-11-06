@@ -14,7 +14,10 @@ class Route
     use SingletonTrait;
 
     public string $currentRoute = '';
-    private string $currentHttpMethod;
+    /**
+     * @var string
+     */
+    private $currentHttpMethod;
     private string $prefix = '';
 
     private RouteCollector $routeCollector;

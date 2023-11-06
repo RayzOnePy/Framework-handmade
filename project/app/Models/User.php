@@ -10,7 +10,14 @@ class User extends Model implements IdentityInterface
 {
     use HasFactory;
 
+    /**
+     * @var bool
+     */
     public $timestamps = false;
+
+    /**
+     * @var array
+     */
     protected $fillable = [
         'name',
         'login',
@@ -25,7 +32,7 @@ class User extends Model implements IdentityInterface
         });
     }
 
-    public function findIdentity(int $id): self
+    public function findIdentity(int $id): ?self
     {
         return self::where('id', $id)->first();
     }
