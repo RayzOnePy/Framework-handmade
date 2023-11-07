@@ -1,3 +1,5 @@
 .env
-/.idea
 /dockers/dev/logs
+.idea
+/project/vendor
+composer.lock
